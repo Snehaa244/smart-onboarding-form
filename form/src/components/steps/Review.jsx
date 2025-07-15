@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateReviewField, setStep, goToNextStep } from '../../redux/formSlice';
+import {
+  updateReviewField,
+  setStep,
+  goToNextStep,
+} from '../../redux/formSlice';
 import FormLayout from '../layout/FormLayout';
 
 const Step6_Review = () => {
   const dispatch = useDispatch();
   const form = useSelector((state) => state.form);
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const editableSections = [
     { key: 'userDetails', title: 'User Details' },
     { key: 'addressDetails', title: 'Address Details' },
     { key: 'employmentDetails', title: 'Employment Details' },
     { key: 'preferences', title: 'Preferences' },
-    { key: 'paymentDetails', title: 'Payment Details' }
+    { key: 'paymentDetails', title: 'Payment Details' },
   ];
 
   const handleChange = (section, field, value) => {
@@ -23,23 +26,22 @@ const Step6_Review = () => {
 
   const handleSubmit = () => {
     setSubmitting(true);
+
     setTimeout(() => {
+      console.log('✅ Submitted Form Data:', form); // helpful for debugging
+
       setSubmitting(false);
-      setSubmitted(true);
-      dispatch(goToNextStep()); // Goes to Submitted step (step 7)
       localStorage.removeItem('smartFormData');
+
+      dispatch(goToNextStep()); // Navigate to Submitted step
     }, 2000);
   };
 
   const handleBack = () => {
-    dispatch(setStep(5));
+    dispatch(setStep(5)); // Go back to Payment
   };
 
   const allValid = Object.keys(form.errors).length === 0;
-
-  if (submitted) {
-    return null; // Do not render anything if Submitted.jsx is handling the view
-  }
 
   return (
     <FormLayout
@@ -66,7 +68,6 @@ const Step6_Review = () => {
         </div>
       ))}
 
-      {/*  Submitting message below buttons */}
       {submitting && (
         <div style={{ marginTop: '1rem', textAlign: 'center', color: '#555' }}>
           <p>⏳ Submitting... Please wait</p>
