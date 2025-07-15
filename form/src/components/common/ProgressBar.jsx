@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import '../../css/progressBar.css';
+import '../../css/progressbar.css';
 
 const steps = [
   'User Details',
