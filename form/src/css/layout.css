@@ -1,0 +1,216 @@
+/* ===========================
+   ✅ Layout Wrapper
+=========================== */
+
+.layout-wrapper {
+  min-height: 100vh;
+  background: #f4f6f8;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===========================
+   ✅ Form Container
+=========================== */
+
+.form-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+}
+
+/* ===========================
+   ✅ Form Groups & Fields
+=========================== */
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group h4 {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  color: #007bff;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.review-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.review-field label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.review-field input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+  background: #fdfdfd;
+  outline: none;
+}
+
+.review-field input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+/* ===========================
+   ✅ Form Navigation Buttons
+=========================== */
+
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.nav-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.back-btn {
+  background-color: #dee2e6;
+  color: #333;
+}
+
+.next-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.next-btn.disabled {
+  background-color: #b5d2f0;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   ✅ Submitting Message
+=========================== */
+
+.submitting-msg {
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
+/* ===========================
+   ✅ Submission Success View
+=========================== */
+
+.submission-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f4f8;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.success-card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  border-top: 6px solid #28a745;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.success-card h2 {
+  font-size: 26px;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+.success-card p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/* ===========================
+   ✅ Success Animation
+=========================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===========================
+   ✅ Form Group State
+=========================== */
+
+.form-group .error {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.form-group.success {
+  background: #e6f9ed;
+  padding: 0.8rem 1rem;
+  border: 1px solid #28a745;
+  border-radius: 6px;
+  color: #155724;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+/* ===========================
+   ✅ Responsive Design
+=========================== */
+
+@media (max-width: 600px) {
+  .form-box {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-btn {
+    width: 48%;
+    font-size: 13px;
+  }
+
+  .form-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
